@@ -11,7 +11,6 @@ before_script:
 
 script:
   - echo "script begin"
-  - docker ps | grep -q blog
 
 after_success:
   # 当代码测试通过后执行的命令
