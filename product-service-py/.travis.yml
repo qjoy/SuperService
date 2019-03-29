@@ -7,10 +7,11 @@ services:
   docker
 
 before_script:
-  print "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
-  print "test code"
+  - echo "script begin"
+  - docker ps | grep -q blog
 
 after_success:
   # 当代码测试通过后执行的命令
